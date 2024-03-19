@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { MyCustomPageWithId } from './my-custom-page/my-custom-page-with-id/my-custom-page.id';
+import { AuthenticationService } from './authentication.service';
+import { SharedPage } from './shared-page/custom.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
   },
   {
     path: '',
@@ -13,13 +14,15 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'my-custom-page',
-    loadChildren: () => import('./my-custom-page/my-custom-page.module').then( m => m.MyCustomPagePageModule)
+    path: 'another-page',
+    loadChildren: () => import ('./another-page/another.module').then( m=> m.AnotherPageModule),
+    canActivate:[AuthenticationService]
   },
   {
-    path: 'my-custom-page/:id',
-    component: MyCustomPageWithId
-  }
+    path: 'shared-page',
+    component: SharedPage,
+    canActivate:[AuthenticationService]
+  },
 ];
 
 @NgModule({

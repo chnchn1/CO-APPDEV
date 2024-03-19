@@ -14,8 +14,9 @@
   </ion-header>
 
   <div id="container">
-    <h2>Hello!</h2>
-    <ion-button href = "my-custom-page/1"> Go by Link </ion-button>
-    <ion-button (click)="goToUserByEvent()">Go By Event</ion-button>
-  </div>
-</ion-content>
+    <strong>CHOOSE A BUTTON</strong><br>
+      <ion-button href ="another-page"> Go By Link </ion-button><br>
+      <ion-button (click)= "goToMyCustomPageByEvent()"> Go By Event </ion-button><br>
+      <ion-button (click) = "goWithAuthentication()"> Authorize </ion-button><br>
+    </div>
+  </ion-content>

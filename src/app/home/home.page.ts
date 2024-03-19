@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  groupName = "CODEA8E";
-  
-  constructor() {}
+  constructor(private route: Router) {}
 
+  goToUserByEvent() {
+    this.route.navigate(['my-custom-page/1'], {
+});
+  }
 }

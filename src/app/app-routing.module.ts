@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthenticationService } from './authentication.service';
-import { SharedPage } from './shared-page/custom.component';
+
 
 const routes: Routes = [
   {
@@ -12,17 +11,14 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
+  }, 
+  
   {
-    path: 'another-page',
-    loadChildren: () => import ('./another-page/another.module').then( m=> m.AnotherPageModule),
-    canActivate:[AuthenticationService]
-  },
-  {
-    path: 'shared-page',
-    component: SharedPage,
-    canActivate:[AuthenticationService]
-  },
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
+
 ];
 
 @NgModule({

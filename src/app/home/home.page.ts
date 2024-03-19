@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  groupName = "CODEA8E";
+  
   constructor() {}
 
 }

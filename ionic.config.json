@@ -1,0 +1,7 @@
+{
+  "name": "activity5-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

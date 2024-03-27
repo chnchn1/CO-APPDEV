@@ -16,6 +16,7 @@ export class DashboardPage implements OnInit {
   books: Show[] = [];
 
   constructor(private bookService: BookService, private modalController: ModalController, private alertController: AlertController, private toastController: ToastController) { }
+  
   async toggleModal () {
     const modal = await this.modalController.create({
       component: ModalComponent

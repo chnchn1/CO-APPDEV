@@ -1,0 +1,22 @@
+ion-title {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    background-color: #E9E6DB;
+    height: 15vh;
+    margin:0px;
+}
+
+ion-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

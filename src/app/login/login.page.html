@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>LogIn</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Log In</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div>
+    <label>Username</label>
+    <ion-input username = "test" type = "text" [(ngModel)] = "username"></ion-input>
+    <label>Password</label>
+    <ion-input password = "test" type = "password" [(ngModel)] = "password"></ion-input>
+    <ion-button color = "primary" (click) = "logIn()"> Log In </ion-button>
+  </div>
+</ion-content>

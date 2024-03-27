@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Book } from './model/book.model';
+import { Show } from './model/book.model';
+import { Observable, map } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,12 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
 
-  getBooks() {
-    return this.http.get<Book[]>('https://openlibrary.org/authors/OL23919A/works.json');
+  getTitles() {
+    return this.http.get<Show[]>('https://openlibrary.org/authors/OL23919A/works.json')
+      .pipe(
+        map((response: any) => {
+          return response.entries.map((entry: any) => ({ title: entry.title }));
+        })
+      );
   }
 }

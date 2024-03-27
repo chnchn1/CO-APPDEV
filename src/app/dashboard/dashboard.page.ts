@@ -4,7 +4,7 @@ import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { ModalComponent } from '../modal/modal.component';
 import { BookService } from '../book.service';
-import { Book } from '../model/book.model';
+import { Show } from '../model/book.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +13,7 @@ import { Book } from '../model/book.model';
 })
 export class DashboardPage implements OnInit {
   volume =100;
-  books: Book[] = [];
+  books: Show[] = [];
 
   constructor(private bookService: BookService, private modalController: ModalController, private alertController: AlertController, private toastController: ToastController) { }
   async toggleModal () {
@@ -46,7 +46,7 @@ export class DashboardPage implements OnInit {
     }
   }
   ngOnInit(): void {
-    this.bookService.getBooks().subscribe(item => { 
+    this.bookService.getTitles().subscribe(item => { 
       this.books = item;
     })
   }

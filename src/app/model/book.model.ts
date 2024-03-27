@@ -1,4 +1,3 @@
-export interface Book {
+export interface Show {
    title: string;
-   author: string;
 }
